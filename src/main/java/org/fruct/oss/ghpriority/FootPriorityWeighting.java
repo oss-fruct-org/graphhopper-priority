@@ -20,8 +20,8 @@ public class FootPriorityWeighting extends FastestWeighting {
     }
 
     @Override
-    public double calcWeight( EdgeIteratorState edge, boolean reverse ) {
-        double weight = super.calcWeight(edge, reverse);
+    public double calcWeight( EdgeIteratorState edge, boolean reverse, int prevOrNextEdgeId ) {
+        double weight = super.calcWeight(edge, reverse, prevOrNextEdgeId);
 
         if (Double.isInfinite(weight))
             return Double.POSITIVE_INFINITY;
