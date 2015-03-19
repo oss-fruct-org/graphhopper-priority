@@ -2,3 +2,4 @@
 .idea/
 build/
 graphhopper-priority.iml
+/*.iml
