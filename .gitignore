@@ -3,3 +3,4 @@
 build/
 graphhopper-priority.iml
 /*.iml
+local.properties

@@ -19,8 +19,14 @@ public class FootPriorityFlagEncoder extends FootFlagEncoder {
         streetPriorityHighways.add("trunk");
         streetPriorityHighways.add("motorway");
         streetPriorityHighways.add("unclassified");
+        streetPriorityHighways.add("bus_guideway");
         residentialPriorityHighways.add("residential");
         residentialPriorityHighways.add("service");
+        residentialPriorityHighways.add("living_street");
+        residentialPriorityHighways.add("pedestrian");
+        residentialPriorityHighways.add("footway");
+        residentialPriorityHighways.add("steps");
+        residentialPriorityHighways.add("path");
     }
 
     @Override
@@ -54,12 +60,13 @@ public class FootPriorityFlagEncoder extends FootFlagEncoder {
         return encoded;
     }
 
+
     public Priority getPriority(long flags) {
         return Priority.values()[((int) priorityEncodedValue.getValue(flags))];
     }
 
     public static enum Priority {
-        STREET(2),
+        STREET(5),
         RESIDENTIAL(1.7),
         FOOT(0.6),
         STREET_WITH_SIDEWALK(0.9);
