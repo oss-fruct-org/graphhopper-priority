@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    compile ('com.graphhopper:graphhopper:0.4.1') {
+    compile ('com.graphhopper:graphhopper:0.7.0') {
         exclude group: 'org.slf4j', module: 'slf4j-log4j12'
     }
 
