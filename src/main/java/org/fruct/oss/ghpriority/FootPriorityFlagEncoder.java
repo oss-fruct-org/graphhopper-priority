@@ -52,10 +52,10 @@ public class FootPriorityFlagEncoder extends FootFlagEncoder {
         } else {
             priority = Priority.FOOT;
         }
-        String sidewalk = way.getTag("sidewalk");
-        if (priority == Priority.STREET && sidewalk != null && !sidewalk.equals("no") && !sidewalk.equals("none")) {
-            priority = Priority.STREET_WITH_SIDEWALK;
-        }
+//        String sidewalk = way.getTag("sidewalk");
+//        if (priority == Priority.STREET && sidewalk != null && !sidewalk.equals("no") && !sidewalk.equals("none")) {
+//            priority = Priority.STREET_WITH_SIDEWALK;
+//        }
         encoded = priorityEncodedValue.setValue(encoded, priority.ordinal());
         return encoded;
     }
@@ -66,10 +66,10 @@ public class FootPriorityFlagEncoder extends FootFlagEncoder {
     }
 
     public static enum Priority {
-        STREET(5),
-        RESIDENTIAL(1.7),
-        FOOT(0.6),
-        STREET_WITH_SIDEWALK(0.9);
+        STREET(10),
+        RESIDENTIAL(2),
+        FOOT(1);
+//        STREET_WITH_SIDEWALK(0.9);
         private final double rate;
         private Priority(double v) {
             this.rate = v;
